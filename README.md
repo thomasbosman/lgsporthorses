@@ -1,9 +1,10 @@
-# Lucy Groenen — LG Sporthorses
+# Lucy Groenen Sporthorses
 
 Een frisse, moderne, statische website (HTML/CSS/JS, geen framework) voor
-paardentrainer Lucy Groenen. Inhoudelijk gebaseerd op de bestaande site
-[www.lucygroenen.nl](https://www.lucygroenen.nl), in een nieuwe huisstijl die is
-afgeleid van het LG Sporthorses-logo.
+**Lucy Groenen Sporthorses (LG Sporthorses)**. De site draait om twee dingen:
+laten zien dat je bij Lucy kwaliteit **springlessen met je eigen paard** (elk
+niveau) kunt volgen, en kennismaken met Lucy. Huisstijl afgeleid van het
+LG Sporthorses-logo.
 
 ## Pagina's
 
@@ -11,9 +12,7 @@ afgeleid van het LG Sporthorses-logo.
 | --- | --- |
 | `index.html` | Home |
 | `over-lucy.html` | Over Lucy |
-| `instructie.html` | Instructie |
-| `training-africhting.html` | Training & Africhting |
-| `paarden.html` | Paarden |
+| `instructie.html` | Instructie (springlessen) |
 | `te-koop.html` | Te koop |
 | `contact.html` | Contact (met formulier + kaart) |
 
@@ -65,8 +64,7 @@ ze door echte foto's:
    </div>
    ```
    Verwijder de `ph-label`-`<div>` en zet er een `<img>` voor in de plaats.
-3. **Paarden** — op `paarden.html` staan drie voorbeeldkaarten; vervang per
-   paard de placeholder door een foto en pas naam/omschrijving aan.
+   Zulke fotovlakken staan o.a. op de home, Over Lucy, Instructie en Te koop.
 
 ## Contactformulier
 
@@ -96,6 +94,6 @@ FTP) geplaatst worden. Upload simpelweg de hele map.
 
 - **Telefoon / WhatsApp:** +31 6 37 40 91 72
 - **E-mail:** info@lgsporthorses.nl
-- **Adres:** Kerkdijk 66, 3615 BG Westbroek
+- **Adres:** Molenweg 8, 3738 DE Maartensdijk
 - **Leslocatie:** Stal Schep, Tull en 't Waal
 - **YouTube** en **Facebook** staan in de footer gelinkt
