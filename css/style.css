@@ -733,7 +733,8 @@ a.card:hover { color: inherit; }
 .footer-list a { color: #C9CFC3; }
 .footer-list a:hover { color: #fff; }
 .footer-contact { display: grid; gap: 0.7rem; }
-.footer-contact a, .footer-contact span { color: #C9CFC3; display: inline-flex; gap: 0.55rem; align-items: flex-start; }
+.footer-contact a { color: #C9CFC3; display: inline-flex; gap: 0.55rem; align-items: flex-start; }
+.footer-contact span { color: #C9CFC3; min-width: 0; }
 .footer-contact svg { width: 18px; height: 18px; flex: none; margin-top: 3px; color: #C5B69A; }
 
 .socials { display: flex; gap: 0.65rem; margin-top: 1.25rem; }
