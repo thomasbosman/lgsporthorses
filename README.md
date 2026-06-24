@@ -94,6 +94,6 @@ FTP) geplaatst worden. Upload simpelweg de hele map.
 
 - **Telefoon / WhatsApp:** +31 6 37 40 91 72
 - **E-mail:** info@lgsporthorses.nl
-- **Adres:** Molenweg 8, 3738 DE Maartensdijk
+- **Adres:** Waalseweg 87a, Tull en 't Waal
 - **Leslocatie:** Stal Schep, Tull en 't Waal
 - **YouTube** en **Facebook** staan in de footer gelinkt
