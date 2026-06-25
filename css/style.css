@@ -13,15 +13,16 @@
   --sand-deep:   #D8C7AC;
 
   /* Merkkleuren — afgeleid uit het LG Sporthorses logo */
-  --forest:      #234535;   /* merkgroen (PANTONE 3435 C) */
-  --forest-700:  #1E3B2D;
-  --forest-900:  #172E23;
-  --sage:        #6E8270;
+  --forest:      #0A4635;   /* merkgroen — PANTONE 3435 C (huisstijlhandboek) */
+  --forest-700:  #08392B;
+  --forest-900:  #06291E;
+  --sage:        #5E7A66;
   --sage-soft:   #AFBCA6;
 
-  --gold:        #B0A287;   /* merkgoud / zand (PANTONE 2324 C) */
+  --gold:        #B1A283;   /* merkgoud / zand — PANTONE 2324 C (huisstijlhandboek) */
   --gold-ink:    #6F6242;   /* donkerder goud — leesbaar voor tekst/links */
   --gold-btn:    #7C6E4D;   /* accentknop met witte tekst */
+  --navy:        #002454;   /* PANTONE 655 C — derde merkkleur */
   /* aliassen zodat bestaande regels het merkgoud gebruiken */
   --leather:     #6F6242;
   --leather-600: #5C5236;
@@ -31,9 +32,9 @@
   --line:        rgba(37, 36, 31, 0.12);
   --line-soft:   rgba(37, 36, 31, 0.07);
 
-  /* Typografie */
-  --font-head: "Fraunces", "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Typografie — huisstijl: Jaldi (koppen) + Roboto (tekst) */
+  --font-head: "Jaldi", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
   /* Maatvoering */
   --maxw: 1180px;
@@ -75,9 +76,9 @@ a:hover { color: var(--forest); }
 
 h1, h2, h3, h4 {
   font-family: var(--font-head);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.005em;
   color: var(--forest-900);
   margin: 0 0 0.5em;
 }
@@ -251,14 +252,14 @@ p:last-child { margin-bottom: 0; }
   width: 46px;
   height: 46px;
   overflow: hidden;
-  background: #234535;
+  background: #0A4635;
 }
 .brand__mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .brand__text { display: inline-flex; flex-direction: column; }
 .brand__name {
   font-family: var(--font-head);
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 .brand__tag {
@@ -353,7 +354,7 @@ p:last-child { margin-bottom: 0; }
   /* Achtergrondfoto: plaats een eigen foto op images/hero.jpg.
      Zonder foto blijft de rustige verloop-achtergrond zichtbaar. */
   background-image:
-    linear-gradient(115deg, rgba(20, 40, 31, 0.88) 0%, rgba(23, 45, 35, 0.50) 48%, rgba(176, 162, 135, 0.22) 100%),
+    linear-gradient(115deg, rgba(6, 41, 30, 0.88) 0%, rgba(10, 55, 42, 0.50) 48%, rgba(176, 162, 135, 0.22) 100%),
     radial-gradient(120% 120% at 80% 10%, rgba(176, 162, 135, 0.28), transparent 55%),
     url("../images/hero.jpg");
   background-size: cover;
@@ -364,7 +365,7 @@ p:last-child { margin-bottom: 0; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(20, 40, 31, 0.60) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(6, 41, 30, 0.60) 100%);
 }
 .hero__inner { max-width: 42rem; position: relative; z-index: 1; }
 .hero h1 { color: #FBF8F1; margin-bottom: 0.5em; }
@@ -392,7 +393,7 @@ p:last-child { margin-bottom: 0; }
   z-index: -1;
   background-color: var(--forest-700);
   background-image:
-    linear-gradient(120deg, rgba(20, 40, 31, 0.92) 0%, rgba(23, 45, 35, 0.66) 60%, rgba(176, 162, 135, 0.24) 100%),
+    linear-gradient(120deg, rgba(6, 41, 30, 0.92) 0%, rgba(10, 55, 42, 0.66) 60%, rgba(176, 162, 135, 0.24) 100%),
     url("../images/hero.jpg");
   background-size: cover;
   background-position: center 30%;
@@ -466,7 +467,7 @@ a.card:hover { color: inherit; }
   box-shadow: var(--shadow-md);
   min-height: 340px;
   background:
-    linear-gradient(140deg, rgba(35, 69, 53, 0.16), rgba(176, 162, 135, 0.20)),
+    linear-gradient(140deg, rgba(10, 70, 53, 0.16), rgba(176, 162, 135, 0.20)),
     var(--sand);
 }
 .split__media img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
@@ -491,7 +492,7 @@ a.card:hover { color: inherit; }
   border-radius: var(--radius);
   overflow: hidden;
   background:
-    linear-gradient(140deg, rgba(35, 69, 53, 0.15), rgba(176, 162, 135, 0.16)),
+    linear-gradient(140deg, rgba(10, 70, 53, 0.15), rgba(176, 162, 135, 0.16)),
     var(--sand);
   box-shadow: var(--shadow-sm);
   aspect-ratio: 4 / 3;
