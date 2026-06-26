@@ -93,13 +93,15 @@
       note.classList.add(ok ? "form-note--ok" : "form-note--err", "is-visible");
     };
 
+    // Verstuurt rechtstreeks via Formsubmit; bericht komt binnen op info@lgsporthorses.nl
+    var endpoint = "https://formsubmit.co/ajax/info@lgsporthorses.nl";
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       var name = (form.elements["name"] || {}).value || "";
       var email = (form.elements["email"] || {}).value || "";
       var message = (form.elements["message"] || {}).value || "";
-      var phone = (form.elements["phone"] || {}).value || "";
       var consent = form.elements["consent"];
 
       name = name.trim();
@@ -117,23 +119,37 @@
         return;
       }
 
-      // Statische site: open de mailclient met een ingevuld bericht.
-      var body =
-        "Naam: " + name + "\n" +
-        "E-mail: " + email + "\n" +
-        (phone ? "Telefoon: " + phone.trim() + "\n" : "") +
-        "\n" + message + "\n";
+      var btn = form.querySelector('button[type="submit"]');
+      var btnText = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Versturen…"; }
 
-      var mailto =
-        "mailto:info@lgsporthorses.nl" +
-        "?subject=" + encodeURIComponent("Bericht via website — " + name) +
-        "&body=" + encodeURIComponent(body);
+      var data = new FormData(form);
+      data.append("_subject", "Nieuw bericht via website — " + name);
+      data.append("_template", "table");
+      data.append("_captcha", "false");
 
-      showNote("Bedankt, " + name.split(" ")[0] +
-        "! Je mailprogramma wordt geopend om het bericht te versturen.", true);
-
-      window.setTimeout(function () { window.location.href = mailto; }, 600);
-      form.reset();
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res && (res.success === "true" || res.success === true)) {
+            showNote("Bedankt, " + name.split(" ")[0] +
+              "! Je bericht is verstuurd. Lucy neemt zo snel mogelijk contact op.", true);
+            form.reset();
+          } else {
+            throw new Error("submit failed");
+          }
+        })
+        .catch(function () {
+          showNote("Er ging iets mis bij het versturen. Probeer het later opnieuw, " +
+            "of mail rechtstreeks naar info@lgsporthorses.nl.", false);
+        })
+        .then(function () {
+          if (btn) { btn.disabled = false; btn.textContent = btnText; }
+        });
     });
   }
 })();
